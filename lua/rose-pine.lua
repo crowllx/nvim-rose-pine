@@ -183,6 +183,7 @@ local function set_highlights()
 		DiagnosticVirtualTextOk = { fg = groups.ok, bg = groups.ok, blend = 10 },
 		DiagnosticVirtualTextWarn = { fg = groups.warn, bg = groups.warn, blend = 10 },
 
+		Member = { fg = "#87cbf8" },
 		Boolean = { fg = palette.rose },
 		Character = { fg = palette.gold },
 		Comment = { fg = palette.subtle, italic = styles.italic },
@@ -275,9 +276,9 @@ local function set_highlights()
 		["@variable"] = { fg = palette.text, italic = styles.italic },
 		["@variable.builtin"] = { fg = palette.love, bold = styles.bold },
 		["@variable.parameter"] = { fg = palette.iris, italic = styles.italic },
-		["@variable.member"] = { fg = palette.foam },
+		["@variable.member"] = { link = "Member" },
 
-		["@constant"] = { fg = palette.gold },
+		["@constant"] = { link = "Constant" },
 		["@constant.builtin"] = { fg = palette.gold, bold = styles.bold },
 		["@constant.macro"] = { fg = palette.gold },
 
@@ -310,7 +311,7 @@ local function set_highlights()
 		-- ["@type.qualifier"] = {},
 
 		-- ["@attribute"] = {},
-		["@property"] = { fg = palette.foam, italic = styles.italic },
+		["@property"] = { link = "Member"},
 
 		--- Functions
 		["@function"] = { fg = palette.rose },
@@ -427,7 +428,7 @@ local function set_highlights()
 		["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
 		["@lsp.typemod.operator.injected"] = { link = "@operator" },
 		["@lsp.typemod.string.injected"] = { link = "@string" },
-		["@lsp.typemod.variable.constant"] = { link = "@constant" },
+		["@lsp.typemod.variable.constant"] = { link = "Constant" },
 		["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
 		["@lsp.typemod.variable.injected"] = { link = "@variable" },
 
